@@ -170,12 +170,14 @@ public class MainMenu extends JFrame{
 	
 	private void addEvents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		MainMenu f = this;
 		startButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				setVisible(false);
 				SelectPlayers sp = new SelectPlayers();
+				sp.setLocationRelativeTo(f);
 				sp.setVisible(true);
+				setVisible(false);
 			}
 			
 		});

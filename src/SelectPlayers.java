@@ -233,13 +233,16 @@ public class SelectPlayers extends JFrame {
 		b1.addActionListener(actionListener);
 		b2.addActionListener(actionListener);
 		b3.addActionListener(actionListener);
+		SelectPlayers f = this;
 		confirm.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
 				//bring up color select page
 				//Sorry.manager.numPlayers = numPlayers;
-				setVisible(false);
 				ColorSelect cs = new ColorSelect(numPlayers);
+				cs.setLocationRelativeTo(f);
 				cs.setVisible(true);
+				setVisible(false);
 				//setVisible(false);
 			}
 		});

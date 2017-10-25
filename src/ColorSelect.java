@@ -191,6 +191,7 @@ public class ColorSelect extends JFrame{
 	
 	private void addEvents() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		ColorSelect f = this;
 		class JButtonActionListener implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -230,8 +231,10 @@ public class ColorSelect extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				//open gameplay class and stuff
 				Gameplay gp = new Gameplay(numPlayers, color);
-				setVisible(false);
+				gp.setLocationRelativeTo(f);
 				gp.setVisible(true);
+				setVisible(false);
+				
 			}
 			
 		});
